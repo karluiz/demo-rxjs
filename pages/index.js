@@ -24,7 +24,7 @@ export default function Home() {
 
   useEffect(() => {
     const subscription = messageService.onMessage().subscribe((message) => {
-      if (message.text) {
+      if (message?.text) {
         setMessages(message.text);
       } else {
         setMessages("");
