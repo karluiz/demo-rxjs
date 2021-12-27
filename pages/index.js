@@ -5,7 +5,7 @@ import { messageService } from "../services/message.service";
 import { RandomQuotes } from "../components/ramdom-quotes/random-quotes";
 
 export default function Home() {
-  const [messages, setMessages] = useState("First message");
+  const [messages, setMessages] = useState("Primer mensaje de prueba");
 
   const items = useMemo(
     () =>
@@ -17,17 +17,17 @@ export default function Home() {
   );
 
   const transitions = useTransition(items, (item) => item.key, {
-    trail: 35,
+    trail: 10,
     from: { display: "none" },
     enter: { display: "" },
   });
 
   useEffect(() => {
     const subscription = messageService.onMessage().subscribe((message) => {
-      if (message?.text) {
+      if (message && message.text) {
         setMessages(message.text);
       } else {
-        setMessages("");
+        setMessages("Mensajes borrados :)");
       }
     });
 
