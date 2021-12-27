@@ -8,7 +8,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "inspirational-quotes": "^2.0.1",
     "next": "12.0.7",
     "random-msg": "^1.0.0",
     "react": "17.0.2",
